@@ -15,6 +15,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>message-generating-backend</name>
     <description>message-generating-backend</description>
+    <packaging>jar</packaging>
 
     <properties>
         <java.version>11</java.version>
@@ -53,6 +54,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <finalName>server</finalName>
+                    <outputDirectory>${basedir}</outputDirectory>
+                    <mainClass>dev.iskandev.messagegeneratingbackend.MessageGeneratingBackendApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
