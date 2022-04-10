@@ -26,13 +26,14 @@ public class MessageController {
 
     @PostMapping
     public void createMessage() {
-        logger.info("Create message request has received");
-        service.createMessage();
+        logger.info("POST-request for creating a message has been received");
+        var m= service.createMessage();
+        logger.info("\nMessage:\n\tvalue = " + m.getValue() + "\n\tsha2 = " + m.getSha2());
     }
 
     @GetMapping
     public Message getLastMessage() throws MessageNotFoundException {
-        logger.info("Get last message request has been received");
+        logger.info("GET-request getting the last message has been received");
         return service.getLastMessage();
     }
 }
